@@ -29,6 +29,5 @@ module.exports = {
     mode: "development",
     devServer:{
         https: true,
-        hot: true,
     },
 };
