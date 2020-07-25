@@ -25,5 +25,10 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: "./src/index.html",
         }),
-    ]
+    ],
+    mode: "development",
+    devServer:{
+        https: true,
+        hot: true,
+    },
 };
