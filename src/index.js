@@ -1,3 +1,14 @@
-import name from "./name"
-const myName = name("Alena");
-console.log(myName);
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+class App extends React.Component {
+    render() {
+        return(
+            <>
+            <div>Hello world</div>
+           
+            </>
+        );
+    }
+}
+ReactDOM.render(<App />, document.getElementById('app'));
