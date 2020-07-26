@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import "./app.css";
+import './style.scss';
+import img from './file.png';
 
 class App extends React.Component {
     render() {
