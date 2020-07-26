@@ -1,5 +1,7 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: "./src/index.js",
     output: {
@@ -24,7 +26,6 @@ module.exports = {
                 use: [
                   'style-loader',
                   'css-loader',
-
                   'sass-loader',
                 ],
               },
@@ -36,15 +37,23 @@ module.exports = {
                   },
                 ],
               },
+              {
+                test: /\.s[ac]ss$/i,
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+              },
         ],
     },
     plugins:[
         new HTMLWebpackPlugin({
             template: "./src/index.html",
         }),
+        new MiniCssExtractPlugin(),
     ],
     mode: "development",
     devServer:{
         https: true,
     },
+    optimization: {
+        minimizer: [new UglifyJsPlugin()],
+      },
 };
