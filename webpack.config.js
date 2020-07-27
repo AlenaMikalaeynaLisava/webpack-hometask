@@ -48,12 +48,13 @@ module.exports = {
             template: "./src/index.html",
         }),
         new MiniCssExtractPlugin(),
+        new UglifyJsPlugin(),
     ],
     mode: "development",
     devServer:{
         https: true,
     },
     optimization: {
-        minimizer: [new UglifyJsPlugin()],
+        minimizer: [],
       },
 };
